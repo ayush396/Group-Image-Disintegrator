@@ -13,19 +13,17 @@ from tensorflow.keras import backend
 import cv2
 import random
 
-
 import numpy as np
 import os
 import glob
 from sklearn.model_selection import train_test_split
 
-
-epochs=100
-img_dims=(96,96,3)
-
 data=[]
 name=[]
-img_files=[f for f in glob.glob(r'env//gender_dataset'+'/**/*',recursive=True) if not os.path.isdir(f)]
+epochs=50
+img_dims=(96,96,3)
+
+img_files=[img for img in glob.glob(r'env//gender_dataset'+'/**/*',recursive=True) if not os.path.isdir(img)]
 #print(img_files)
 
 random.shuffle(img_files)
@@ -62,7 +60,6 @@ inp_shape=(img_dims[1],img_dims[0],img_dims[2])
 model=Sequential()
 
 channel_Dimension=-1
-
 if backend.image_data_format()=='channel_first':
     inp_shape=(img_dims[2],img_dims[1],img_dims[0])
     channel_Dimension=1
@@ -84,10 +81,6 @@ model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Dropout(0.25))
 
 
-# model.add(Conv2D(128,(3,3),padding='same'))
-# model.add(Activation('relu'))
-# model.add(BatchNormalization(axis=channel_Dimension))
-
 model.add(Conv2D(128,(3,3),padding='same'))
 model.add(Activation('relu'))
 model.add(BatchNormalization(axis=channel_Dimension))
@@ -104,8 +97,7 @@ model.add(Dense(2))
 model.add(Activation('sigmoid'))
 
 
-
-adam1=Adam(lr=0.001,decay=0.001/100)
+adam1=Adam(lr=0.001,decay=0.001/50)
 model.compile(loss='binary_crossentropy',optimizer=adam1,metrics=['accuracy'])
 
 fit_model=model.fit_generator(augmented.flow(X_train,Y_train,batch_size=64),validation_data=(X_test,Y_test),steps_per_epoch=size//64,epochs=50,verbose=1)
