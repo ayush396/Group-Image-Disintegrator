@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Files</title>
+    <title>Close-Ups</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo3.ico">
+
+
 </head>
-
 <body>
-    <a href="{{url_for('segregatorMale')}}" download> Download Male Members</a>
-    <a href="{{url_for('segregatorFemale')}}" download> Download Female Members</a>
-</body>
+    <div class="banner"> 
+        <div class="navbar">
+            <img src="logo1.png" class="logo">
+            <p class="name"><span class="ups">Close-Ups</span> </p>
+            <ul>
+                <li><a href="/">Home </a></li>
+                <li><a href="#">Insights </a></li>
+                <li><a href="#">Contact Us </a></li>   
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Download The Segregated Pictures Here!</h1>
+            <p>Press the buttons given below to get the segregated pictures from your group pictures</p>
+            <div>
+                <button type="button"> <span class="bt">Download Male Set</span> </button>
+                <button type="button"> <span class="bt">Download Female Set</span> </button>
 
+            </div>
+        </div>
+    </div>
+</body>
 </html>
