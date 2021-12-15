@@ -2,6 +2,9 @@ from flask import Flask,render_template,request
 import os
 from extrator import extract
 from werkzeug.utils import secure_filename
+
+from seperator import seperate
+
 app=Flask(__name__)
 
 
@@ -15,6 +18,7 @@ def upload():
         f=request.files['inp_file']
         f.save(os.path.join("env//static",secure_filename('upload.jpg')))
         extract.faces()
+        seperate.segregator()
         return "Upload Successfully"
     
 if __name__ == '__main__':
