@@ -1,14 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 body {
-    
-   
-    background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),url(bg1.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(bg1.jpg);
     background-size: cover;
     background-position: center;
     overflow: hidden;
 }
-
-
 
 .intro {
     font-size: 2 rem;
@@ -22,17 +18,14 @@ body {
 }
 
 h1 {
-    
     color: white;
-    margin-left:550px ;
+    margin-left: 550px;
     margin-top: 30px;
     font-size: 50px;
     width: 100%;
     position: absolute;
     font-family: 'Lobster', cursive;
     transform: translateY(-50%);
-    
-    
 }
 
 .box {
@@ -42,7 +35,7 @@ h1 {
     position: absolute;
 }
 
-button{
+button {
     width: 120px;
     height: 47px;
     padding: 5px 0;
@@ -50,7 +43,7 @@ button{
     font-size: 20px;
     margin: 10px 5px;
     border-radius: 30px;
-    font-weight: bold ;
+    font-weight: bold;
     border: 3px solid #f55e70;
     cursor: pointer;
     color: white;
@@ -58,8 +51,6 @@ button{
     position: relative;
     overflow: hidden;
 }
-
-
 
 button:hover {
     color: #28194a;
@@ -71,41 +62,35 @@ button:hover {
     left: 0;
     bottom: 0;
     z-index: -1;
-    
-    
 }
-
 
 a {
     text-decoration: none;
 }
 
-.logo{
+.logo {
     width: 140px;
     cursor: pointer;
-    
 }
 
-.ups{
+.ups {
     background: -webkit-linear-gradient(#eee, #f55e70);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.name{
+.name {
     color: white;
     font-size: 3rem;
     font-family: sans-serif;
     font-weight: bold;
-    text-align: left ;
+    text-align: left;
     transform: translateY(20%);
-
-
     position: absolute;
     margin-left: 150px;
 }
 
-.navbar{
+.navbar {
     width: 85%;
     font-size: 1.2rem;
     margin: auto;
@@ -115,65 +100,56 @@ a {
     justify-content: space-between;
 }
 
-.navbar ul li{
+.navbar ul li {
     list-style: none;
-    display:inline-block;
+    display: inline-block;
     margin: 0 20px;
-    position:relative;
+    position: relative;
 }
 
-.navbar ul li a{
+.navbar ul li a {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
 }
 
-.navbar ul li::after{
+.navbar ul li::after {
     content: '';
     height: 3px;
     width: 0;
     background: #f55e70;
-    position:absolute;
+    position: absolute;
     left: 0;
     bottom: -10px;
     transition: 0.5s;
 }
 
-.navbar ul li:hover::after{
+.navbar ul li:hover::after {
     width: 100%;
 }
 
 input[type="file"] {
     display: none;
-
 }
 
-.upload{
-
-   
+.upload {
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
     height: 48px;
-    
     text-align: center;
     font-size: 20px;
-   
     border-radius: 30px;
-    font-weight: bold ;
+    font-weight: bold;
     border: 3px solid #f55e70;
     cursor: pointer;
     color: white;
     background: transparent;
-   
-
-
 }
 
-.upload:hover{
+.upload:hover {
     color: #28194a;
-    background: linear-gradient(#eee,#f55e70 );
-    
+    background: linear-gradient(#eee, #f55e70);
     font-size: 20px;
     border-radius: 30px;
     border: 3px solid #f55e70;
@@ -181,21 +157,20 @@ input[type="file"] {
     left: 0;
     bottom: 0;
     z-index: -1;
-
 }
 
-.choose{
+.choose {
     margin-left: 570px;
     margin-top: 350px;
 }
 
-.ab{
+.ab {
     margin-left: 880px;
     margin-top: -64px;
 }
 
-.idx{
-    width: 600px; 
+.idx {
+    width: 600px;
     height: 300px;
     margin-top: 20px;
     opacity: 60%;
