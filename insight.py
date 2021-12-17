@@ -4,31 +4,9 @@ from PIL import Image
 import numpy as np
 import shutil
 
-files=os.listdir('env//female')
-print(files)
-files2=os.listdir('env//male')
-shutil.rmtree('env//border')
-os.mkdir('env//border')
-shutil.rmtree('env//border2')
-os.mkdir('env//border2')
-
-for i in files:
-    im = cv2.imread('env//female//'+i)
-    border = cv2.copyMakeBorder(
-    im, 7, 7, 7, 7, cv2.BORDER_CONSTANT, value=[255, 255, 255])
-    cv2.imwrite('env//border//output_'+ i , border)
-
+def evenFemale():
     border_files=os.listdir('env//border')
 
-for i in files2:
-    im = cv2.imread('env//male//'+i)
-    border = cv2.copyMakeBorder(
-    im, 7, 7, 7, 7, cv2.BORDER_CONSTANT, value=[255, 255, 255])
-    cv2.imwrite('env//border2//output_'+ i , border)
-
-    border_files2=os.listdir('env//border2')
-
-def evenFemale():
     img_count=[]
     for x in border_files:
         img=Image.open('env//border//'+x)
@@ -47,6 +25,7 @@ def evenFemale():
 
 
 def oddFemale():
+    border_files=os.listdir('env//border')
     img_count=[]
     for x in border_files:
         img=Image.open('env//border//'+x)
@@ -71,6 +50,7 @@ def oddFemale():
 
 
 def evenMale():
+    border_files2=os.listdir('env//border2')
     img_count=[]
     for x in border_files2:
         img=Image.open('env//border2//'+x)
@@ -89,6 +69,7 @@ def evenMale():
 
 
 def oddMale():
+    border_files2=os.listdir('env//border2')
     img_count=[]
     for x in border_files2:
         img=Image.open('env//border2//'+x)
@@ -117,15 +98,37 @@ class Female():
         pass
 
     def helper():
+        border_files=os.listdir('env//border')
         if len(border_files)%2==0:
-            evenFemale()
+            if len(border_files)==0:
+                img = Image.open('env//static//female.jpg')
+                img = img.convert("RGB")
+                 
+                img.save('env//static//collage.jpg',format='JPEG', quality=95)
+            else:
+                evenFemale()
         else:
-            oddFemale()
+            if len(border_files)==1:
+                img=Image.open('env//border//'+border_files[0])
+                img.save('env//static//collage.jpg')
+            else:
+                oddFemale()
 class Male():
     def __init__(self) :
         pass
     def helper():
+        border_files2=os.listdir('env//border2')
         if len(border_files2)%2==0:
-            evenMale()
+            if len(border_files2)==0:
+                img = Image.open('env//static//male.jpg')
+                img = img.convert("RGB")
+    
+                img.save('env//static//collage2.jpg',format='JPEG', quality=95)
+            else:
+                evenMale()
         else:
-            oddMale()
+            if len(border_files2)==1:
+                img=Image.open('env//border2//'+border_files2[0])
+                img.save('env//static//collage2.jpg')
+            else:
+                oddMale()
