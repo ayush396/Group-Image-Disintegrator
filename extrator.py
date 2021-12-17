@@ -15,7 +15,7 @@ def save(img, name, bbox, width=180, height= 227):
     cv2.imwrite(name+".jpg", imgCrop)  
 
 
-
+dict={1:'a',2:'b',3:'c',4:'d',5:'e',6:'f',7:'g',8:'h',9:'i',10:'j',11:'k',12:'l',13:'m',14:'n',15:'o',16:'p',17:'q',18:'r',19:'s',20:'t',21:'u',22:'v',23:'w',24:'x',25:'y',26:'z'}
 class extract():
     def __init__(self) :
         pass
@@ -26,9 +26,9 @@ class extract():
     
         faces = detector(frame)
         fit = 20
-        shutil.rmtree(new_path)
-        os.makedirs(new_path)
-        counter=0
+        shutil.rmtree('env/extracted_pics')
+        os.makedirs('env/extracted_pics')
+        counter=1
 
         for face in faces:
             
@@ -49,7 +49,7 @@ class extract():
             cv2.line(frame, (x+w, y+h), (x+w, y+h-10), (0,250,0),3)
             cv2.line(frame, (x+w, y+h), (x+w-10, y+h), (0,250,0),3)
 
-            save(frame2, new_path+str(counter), (x-fit, y-fit, x2+fit, y2+fit))
+            save(frame2, new_path+dict[counter],(x-fit, y-fit, x2+fit, y2+fit))
             counter=counter+1
             
         frame = cv2.resize(frame, (800,800))
