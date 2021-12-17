@@ -6,6 +6,7 @@ from werkzeug.utils import secure_filename
 from seperator import seperate
 from insight import Female,Male
 import shutil
+import cv2
 
 app=Flask(__name__)
 
@@ -25,7 +26,15 @@ def upload():
         shutil.make_archive('env\segregatorFemale','zip','env\Female')
         Female.helper()
         Male.helper()
-        return render_template("upload.html")
+        im=cv2.imread('env//static//upload.jpg')
+        ans=im.shape
+        f=os.listdir('env//extracted_pics')
+        val=len(f)
+        f1=os.listdir('env//Male')
+        val1=len(f1)
+        f2=os.listdir('env//Female')
+        val2=len(f2)
+        return render_template("insight.html",ans1=ans[0],ans2=ans[1],val=val,val1=val1,val2=val2)
 
 @app.route('/download')
 def segregatorMale():
@@ -39,7 +48,7 @@ def segregatorFemale():
 
 @app.route('/insights')
 def insights():
-    return render_template('insight.html')
+    return render_template('upload.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
