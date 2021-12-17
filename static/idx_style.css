@@ -11,6 +11,38 @@ body {
     padding-left: 100px;
 }
 
+.abc {
+    width: 140px;
+    height: 55px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 3px solid #28194a;
+    color: white;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    padding: 6px 10px;
+    margin: 4px 2px;
+}
+
+.abc:hover {
+    color: white;
+    background: #28194a;
+    padding: 6px 10px;
+    margin: 4px 2px;
+    width: 140px;
+    height: 55px;
+    font-size: 25px;
+    border-radius: 30px;
+}
+
+.etc {
+    margin-top: 300 px;
+    margin-left: 100 px;
+}
+
 .sample {
     width: 200px;
     top: 0;
@@ -66,6 +98,11 @@ button:hover {
 
 a {
     text-decoration: none;
+    color: white
+}
+
+a:hover {
+    color: white;
 }
 
 .logo {
@@ -169,10 +206,19 @@ input[type="file"] {
     margin-top: -64px;
 }
 
+.etc {
+    margin-left: 720px;
+    margin-top: -20px;
+}
+
 .idx {
     width: 600px;
     height: 300px;
     margin-top: 20px;
     opacity: 60%;
     border-radius: 25px;
+}
+
+.etc1 {
+    width: 400px;
 }
