@@ -32,7 +32,7 @@ class seperate():
 
             pred=model.predict(img)[0]
             #print(pred[0])
-            if pred[0]>0.5:
+            if pred[0]>0.9:
                 idx=0
             else:
                 idx=1
