@@ -100,7 +100,7 @@ model.add(Activation('sigmoid'))
 adam1=Adam(lr=0.001,decay=0.001/100)
 model.compile(loss='binary_crossentropy',optimizer=adam1,metrics=['accuracy'])
 
-fit_model=model.fit_generator(augmented.flow(X_train,Y_train,batch_size=64),validation_data=(X_test,Y_test),steps_per_epoch=size//64,epochs=50,verbose=1)
+fit_model=model.fit_generator(augmented.flow(X_train,Y_train,batch_size=64),validation_data=(X_test,Y_test),steps_per_epoch=size//64,epochs=100,verbose=1)
 model.save('env//GenderClassifier.model')
 
 
